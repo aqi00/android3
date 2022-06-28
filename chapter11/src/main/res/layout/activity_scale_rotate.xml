@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="请两指同时按压并缩放或旋转，再观察手势结果"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <com.example.chapter11.widget.MultiTouchView
+        android:id="@+id/mtv_gesture"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/white" />
+
+</LinearLayout>

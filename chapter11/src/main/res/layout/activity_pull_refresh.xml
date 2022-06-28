@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.example.chapter11.widget.PullDownRefreshLayout
+        android:id="@+id/pdrl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.chapter11.widget.PullDownScrollView
+            android:id="@+id/pdsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.example.chapter11.widget.BannerPager
+                    android:id="@+id/banner_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_flipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="#eeffee"
+                    android:gravity="top|center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="请反复下拉页面和上拉页面"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:background="#9999ff" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </com.example.chapter11.widget.PullDownScrollView>
+    </com.example.chapter11.widget.PullDownRefreshLayout>
+
+    <!-- title_drag.xml是带搜索框的工具栏布局 -->
+    <include layout="@layout/title_drag" />
+
+</RelativeLayout>
