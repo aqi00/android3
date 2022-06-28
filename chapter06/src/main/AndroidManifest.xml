@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter06">
+    <!-- 存储卡读写 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Android10新增权限MANAGE_EXTERNAL_STORAGE -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- 联系人/通讯录。包括读联系人、写联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!-- 短信。包括发送短信、接收短信、读短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ShareWriteActivity" />
+        <activity android:name=".ShareReadActivity" />
+        <activity android:name=".LoginShareActivity" />
+        <activity android:name=".DatastoreWriteActivity" />
+        <activity android:name=".DatastoreReadActivity" />
+        <activity android:name=".LoginStoreActivity" />
+        <activity android:name=".LoginForgetActivity" />
+        <activity android:name=".DatabaseActivity" />
+        <activity android:name=".SQLiteWriteActivity" />
+        <activity android:name=".SQLiteReadActivity" />
+        <activity android:name=".LoginSQLiteActivity" />
+        <activity android:name=".FilePathActivity" />
+        <activity android:name=".FileWriteActivity" />
+        <activity android:name=".FileReadActivity" />
+        <activity android:name=".ImageWriteActivity" />
+        <activity android:name=".ImageReadActivity" />
+        <activity android:name=".ActTestActivity" />
+        <activity android:name=".AppWriteActivity" />
+        <activity android:name=".AppReadActivity" />
+        <activity android:name=".RoomWriteActivity" />
+        <activity android:name=".RoomReadActivity" />
+        <activity android:name=".ContentWriteActivity" />
+        <activity android:name=".ContentReadActivity" />
+        <activity android:name=".ContactAddActivity" />
+        <activity android:name=".ContactReadActivity" />
+        <activity android:name=".MonitorSmsActivity" />
+        <activity
+            android:name=".ShoppingCartActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShoppingChannelActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShoppingDetailActivity"
+            android:theme="@style/AppCompatTheme" />
+        <!-- provider的authorities属性值需要与Java代码的AUTHORITIES保持一致 -->
+        <provider
+            android:name=".provider.UserInfoProvider"
+            android:authorities="com.example.chapter06.provider.UserInfoProvider"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
