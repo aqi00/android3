@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.chapter17">
+
+    <!-- WiFi权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- NFC -->
+    <uses-permission android:name="android.permission.NFC" />
+    <!-- 仅在支持NFC的设备上运行 -->
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+    <!-- 红外遥控 -->
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+    <!-- 仅在支持红外的设备上运行 -->
+    <uses-feature android:name="android.hardware.ConsumerIrManager" android:required="true" />
+    <!-- 蓝牙（Android12之前） -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- 蓝牙（Android12之后） -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 仅在支持BLE（即蓝牙4.0）的设备上运行 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+    <!-- 如果Android6.0 蓝牙搜索不到设备，需要补充下面两个权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WifiInfoActivity" />
+        <activity android:name=".WifiScanActivity" />
+        <activity android:name=".NfcActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+        </activity>
+        <activity android:name=".InfraredActivity" />
+        <activity android:name=".BluetoothPairActivity" />
+        <activity android:name=".BluetoothTransActivity" />
+        <activity android:name=".BleScanActivity" />
+        <activity android:name=".BleAdvertiseActivity" />
+        <activity android:name=".BleClientActivity" />
+        <activity android:name=".BleServerActivity" />
+        <activity android:name=".ScanCarActivity" />
+        <activity android:name=".SmartCarActivity" />
+    </application>
+
+</manifest>
