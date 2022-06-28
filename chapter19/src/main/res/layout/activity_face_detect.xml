@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    android:keepScreenOn="true">
+
+    <com.example.hmsml.face.camera.LensEnginePreview
+        android:id="@+id/lep_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.hmsml.face.views.overlay.GraphicOverlay
+            android:id="@+id/go_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.example.hmsml.face.camera.LensEnginePreview>
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_circle"
+        android:src="@drawable/icon_back_black" />
+
+    <ImageView
+        android:id="@+id/iv_switch"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/switch_camera" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="保存头像"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</RelativeLayout>

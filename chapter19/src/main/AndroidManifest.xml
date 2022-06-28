@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter19">
+    <!-- 存储卡读写 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HmsScanActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".ScanResultActivity" />
+        <activity android:name=".RecognizeTextActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".RecognizeResultActivity" />
+        <activity android:name=".RecognizeDocActivity" />
+        <activity android:name=".FaceDetectActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".FaceVerifyActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".LivenessDetectActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".LivenessCustomActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".FacePickActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".BgReplaceActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".FaceSmileActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".WisdomEyeActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".PersonEditActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".PersonDetailActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".PersonCutActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".PersonVerifyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/apk_file_provider" />
+        </provider>
+
+    </application>
+
+</manifest>

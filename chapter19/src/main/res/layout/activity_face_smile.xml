@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <com.example.hmsml.smile.camera.LensEnginePreview
+        android:id="@+id/lep_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.hmsml.smile.views.overlay.GraphicOverlay
+            android:id="@+id/go_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.example.hmsml.smile.camera.LensEnginePreview>
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_circle"
+        android:src="@drawable/icon_back_black" />
+
+    <ImageView
+        android:id="@+id/iv_switch"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/switch_camera" />
+
+    <ImageView
+        android:id="@+id/iv_restart"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/icon_restart"
+        android:onClick="startPreview" />
+</RelativeLayout>
