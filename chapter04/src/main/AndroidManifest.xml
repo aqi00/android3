@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter04">
+
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 定时管理器（Android12之后需要） -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActStartActivity" />
+        <activity android:name=".ActFinishActivity" />
+        <activity android:name=".ActLifeActivity" />
+        <activity android:name=".ActNextActivity" />
+        <activity
+            android:name=".JumpFirstActivity"
+            android:launchMode="standard" />
+        <activity android:name=".JumpSecondActivity" />
+        <activity android:name=".LoginInputActivity" />
+        <activity android:name=".LoginSuccessActivity" />
+        <activity android:name=".ActionUriActivity" />
+        <activity android:name=".ActSendActivity" />
+        <activity android:name=".ActReceiveActivity" />
+        <activity android:name=".ActRequestActivity" />
+        <activity android:name=".ActResponseActivity" />
+        <activity android:name=".RegisterResultActivity" />
+        <activity android:name=".ChoosePhotoActivity" />
+        <activity android:name=".BroadStandardActivity" />
+        <activity android:name=".BroadOrderActivity" />
+        <activity android:name=".BroadStaticActivity" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".ServiceNormalActivity" />
+        <activity android:name=".BindImmediateActivity" />
+        <activity android:name=".BindDelayActivity" />
+        <activity android:name=".ServiceDataActivity" />
+
+        <receiver
+            android:name=".receiver.ShockReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.chapter04.shock" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.NormalService"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name=".service.BindImmediateService" />
+        <service android:name=".service.BindDelayService" />
+        <service android:name=".service.DataService" />
+    </application>
+
+</manifest>

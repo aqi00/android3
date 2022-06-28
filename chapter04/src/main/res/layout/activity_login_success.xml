@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这里是登录成功页面，登录成功之后不必返回登录验证页面。请按返回键观察看看"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+</LinearLayout>
