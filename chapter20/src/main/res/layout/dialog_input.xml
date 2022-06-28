@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/editext_selector"
+            android:hint="请输入"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="取　消"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="确　定"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

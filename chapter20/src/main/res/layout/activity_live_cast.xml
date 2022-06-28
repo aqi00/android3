@@ -1,0 +1,204 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/svr_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:background="@drawable/shape_gray"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_room"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_room"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="直播间"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="当前共0人观看"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"
+            android:background="@drawable/shape_rose"
+            android:text="关注"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/icon_close" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="2dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_join"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="@drawable/circle_gold"
+            android:text="加入会员"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="@drawable/circle_gold"
+            android:text="领取红包"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="@drawable/circle_gold"
+            android:text="马上下单"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_message" />
+
+            <ScrollView
+                android:id="@+id/sv_chat"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/ll_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:gravity="bottom"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_input"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editext_selector"
+                    android:hint="请输入聊天内容"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_send"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_green"
+                    android:text="发送"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.chapter20.widget.RewardView
+                android:id="@+id/rv_gift"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:background="@color/transparent" />
+
+            <ImageView
+                android:id="@+id/iv_reward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/reward" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

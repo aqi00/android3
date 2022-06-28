@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter20">
+    <!-- 视频通话需要以下权限 -->
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".VideoOfferActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".VideoRecipientActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ContactListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ContactVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".LiveListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".LiveClientActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".LiveServerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+    </application>
+
+</manifest>
