@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter07">
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SpinnerDropdownActivity" />
+        <activity android:name=".SpinnerDialogActivity" />
+        <activity android:name=".SpinnerIconActivity" />
+        <activity android:name=".BaseAdapterActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".ListFocusActivity" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".PagerTabActivity" />
+        <activity android:name=".LaunchSimpleActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".FragmentStaticActivity" />
+        <activity android:name=".FragmentDynamicActivity" />
+        <activity android:name=".LaunchImproveActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".ShoppingCartActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".ShoppingChannelActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".ShoppingDetailActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".BillAddActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".BillPagerActivity" android:theme="@style/AppCompatTheme" />
+    </application>
+
+</manifest>

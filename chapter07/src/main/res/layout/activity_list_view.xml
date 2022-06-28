@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <CheckBox
+            android:id="@+id/ck_divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="显示分隔线"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <CheckBox
+            android:id="@+id/ck_selector"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="显示按压背景"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_planet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--
+    <ListView
+        android:id="@+id/lv_planet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@null"
+        android:listSelector="@color/transparent" />
+        -->
+
+</LinearLayout>
