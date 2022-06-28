@@ -1,0 +1,44 @@
+<!-- 根布局为两行两列的网格布局，其中列数由columnCount指定，行数由rowCount指定 -->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="2">
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="#ffcccc"
+        android:text="浅红色"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="#ffaa33"
+        android:text="橙色"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="#00ff00"
+        android:text="绿色"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="#660066"
+        android:text="深紫色"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+</GridLayout>

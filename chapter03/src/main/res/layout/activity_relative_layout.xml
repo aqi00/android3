@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp" >
+    
+    <TextView
+        android:id="@+id/tv_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:text="我在中间"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#eeeeee"
+        android:text="我在水平中间"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="#eeeeee"
+        android:text="我在垂直中间"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_parent_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="#eeeeee"
+        android:text="我跟上级左边对齐"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_parent_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="#eeeeee"
+        android:text="我跟上级右边对齐"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_parent_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#eeeeee"
+        android:text="我跟上级顶部对齐"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv_parent_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#eeeeee"
+        android:text="我跟上级底部对齐"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_left_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tv_center"
+        android:layout_alignTop="@+id/tv_center"
+        android:background="#eeeeee"
+        android:text="我在中间左边"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_right_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_center"
+        android:layout_alignBottom="@+id/tv_center"
+        android:background="#eeeeee"
+        android:text="我在中间右边"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_above_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_center"
+        android:layout_alignLeft="@+id/tv_center"
+        android:background="#eeeeee"
+        android:text="我在中间上面"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_below_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_center"
+        android:layout_alignRight="@+id/tv_center"
+        android:background="#eeeeee"
+        android:text="我在中间下面"
+        android:textSize="11sp"
+        android:textColor="#000000" />
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_about"
+        android:drawablePadding="5dp"
+        android:text="图标在左"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:drawableRight="@drawable/ic_about"
+        android:drawablePadding="5dp"
+        android:text="图标在右"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_about"
+        android:drawablePadding="5dp"
+        android:text="图标在上"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:drawableBottom="@drawable/ic_about"
+        android:drawablePadding="5dp"
+        android:text="图标在下"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+</LinearLayout>
