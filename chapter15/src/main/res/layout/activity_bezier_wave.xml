@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始播放动画"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <com.example.chapter15.widget.WaveView
+        android:id="@+id/wv_wave"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+
+</LinearLayout>

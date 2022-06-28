@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tl_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue_light"
+        app:navigationIcon="@drawable/icon_back" />
+
+    <Button
+        android:id="@+id/btn_resume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="恢复原状"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <com.example.chapter15.widget.CurveView
+        android:id="@+id/cv_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

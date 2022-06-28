@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_slide"
+        android:orderInCategory="1"
+        app:showAsAction="never"
+        android:title="平滑翻页"/>
+    
+    <item
+        android:id="@+id/menu_curve"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        android:title="卷曲翻页"/>
+    
+    <item
+        android:id="@+id/menu_opengl"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        android:title="OpenGL翻页"/>
+    
+</menu>
