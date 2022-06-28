@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_voice" />
+
+    <TextView
+        android:id="@+id/tv_recognize_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        android:layout_margin="5dp"
+        android:text="这里显示识别结果文本"
+        android:textSize="17sp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_recognize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始实时识别"
+        android:textSize="17sp"
+        android:textColor="@color/black" />
+
+</LinearLayout>

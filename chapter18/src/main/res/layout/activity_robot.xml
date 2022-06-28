@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_voice" />
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center"
+        android:text="您好，很高兴为您服务。\n有什么可以帮您的呢O(∩_∩)O"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/iv_robot"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/robot" />
+
+    <TextView
+        android:id="@+id/tv_answer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center"
+        android:text="我的回答在这里哦~\\(^o^)/~"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_question_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查看问答列表"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_question_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加新的问答"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

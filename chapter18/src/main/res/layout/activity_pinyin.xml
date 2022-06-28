@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_hanzi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="left|top"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始转换"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <CheckBox
+        android:id="@+id/ck_tone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保留声调数字"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_pinyin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>

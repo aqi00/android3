@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter18">
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SpeechEngineActivity" />
+        <activity android:name=".SpeechComposeActivity" />
+        <activity android:name=".PinyinActivity" />
+        <activity android:name=".AudioRawActivity" />
+        <activity
+            android:name=".VoiceComposeActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".VoiceRecognizeActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity android:name=".VoiceInferenceActivity" />
+        <activity
+            android:name=".RobotActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".QuestionEditActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".QuestionListActivity"
+            android:theme="@style/AppCompatTheme" />
+    </application>
+
+</manifest>

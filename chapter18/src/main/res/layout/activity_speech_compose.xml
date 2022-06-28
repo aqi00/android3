@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/sp_engine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/sp_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dialog" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_tts"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="top|left"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始朗读"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+</LinearLayout>
