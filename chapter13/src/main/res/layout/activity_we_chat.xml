@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/rg_tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_friend"
+            style="@style/TabButton"
+            android:checked="true"
+            android:text="好友"
+            android:drawableTop="@drawable/tab_first_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_group"
+            style="@style/TabButton"
+            android:text="群聊"
+            android:drawableTop="@drawable/tab_second_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/TabButton"
+            android:text="我的"
+            android:drawableTop="@drawable/tab_third_selector" />
+    </RadioGroup>
+
+</LinearLayout>
