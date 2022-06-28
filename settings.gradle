@@ -1,0 +1,50 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        // 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        // 以下添加华为的仓库地址，引入HMS需要
+        maven { url 'https://developer.huawei.com/repo/'}
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        // 以下添加华为的仓库地址，引入HMS需要
+        maven { url 'https://developer.huawei.com/repo/'}
+    }
+}
+rootProject.name = "android3"
+include ':app'
+include ':chapter02'
+include ':chapter03'
+include ':chapter04'
+include ':chapter05'
+include ':chapter06'
+include ':chapter07'
+include ':chapter08'
+include ':chapter09'
+include ':chapter10'
+include ':chapter11'
+include ':chapter12'
+include ':chapter13'
+include ':chapter14'
+include ':chapter15'
+include ':chapter16'
+include ':chapter17'
+include ':chapter18'
+include ':chapter19'
+include ':chapter20'
+include ':hmsml'

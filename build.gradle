@@ -1,0 +1,18 @@
+
+// HMS需要导入com.huawei.agconnect:agcp
+// 连带需要com.android.tools.build:gradle
+buildscript {
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+        classpath 'com.huawei.agconnect:agcp:1.5.2.300'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.1.2' apply false
+    id 'com.android.library' version '7.1.2' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

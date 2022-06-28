@@ -1,0 +1,20 @@
+特别注意：源码目录不能包含任何中文字符，也不能带空格。NDK的安装目录同样不能有中文和空格。计算机的用户名也不能带有中文。
+
+一、关于这套源码的运行环境
+这是《Android Studio开发实战：从零基础到App上线(第3版)》的源码工程，基于Android Studio Bumblebee编写，并在API31（Android 12）上编译通过。
+
+二、如何以项目形式导入本书源码
+1、访问源码的gitee主页https://gitee.com/aqi00/android3，单击页面右边的绿色按钮“Clone or download”，浏览器会自动下载压缩文件android3-master.zip，下载完成后解压出来android3-master文件夹。
+2、打开Android Studio，依次选择菜单“File”——“Open”，在弹出的文件选择对话框里选中android3-master目录，Android Studio就会开始加载整个项目。
+注意项目文件夹下面的local.properties，在导入源码之前，要先把该文件里面的ndk.dir改为读者电脑上的NDK安装路径，把sdk.dir改为读者电脑上的SDK安装路径。
+
+三、如何以模块形式导入本书源码
+单独导入某章源码时，可能出现“Plugin with id 'com.android.application' not found.”的错误，这是因为各章源码以module形式提供，不能“Import Project”的形式导入。单独导入某章源码的话，需要以“Import Module”的形式导入。具体导入步骤如下：
+1、依次选择菜单“File”——“New”——“New Project”，按提示新建一个项目（即Project）；
+2、项目创建完毕，再依次选择菜单“File”——“New”——“Import Module”，按提示导入具体的某章demo；
+注意要出现Project级别的build.gradle才可以正常编译。
+
+四、关于第13章网络通信服务端程序的下载和运行
+服务端程序也已上传到了gitee，地址是https://gitee.com/aqi00/net_server。服务端程序基于IDEA环境、使用Java编码，服务端环境搭建和运行说明详见该gitee地址的《服务端工程的使用说明（IDEA版）.docx.docx》。
+
+五、单独导入chapter19模块可能提示“Project with path ':hmsml' could not be found in root project 'chapter19'”，这是因为chapter19模块依赖于hmsml模块，要先按模块方式导入hmsml，然后再导入chapter19模块。或者以项目形式一次性导入本书的源码，即可同时导入包括chapter19和hmsml在内的所有模块。

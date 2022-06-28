@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../Android/gradle-7.2" />
+        <option name="gradleJvm" value="11" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/chapter02" />
+            <option value="$PROJECT_DIR$/chapter03" />
+            <option value="$PROJECT_DIR$/chapter04" />
+            <option value="$PROJECT_DIR$/chapter05" />
+            <option value="$PROJECT_DIR$/chapter06" />
+            <option value="$PROJECT_DIR$/chapter07" />
+            <option value="$PROJECT_DIR$/chapter08" />
+            <option value="$PROJECT_DIR$/chapter09" />
+            <option value="$PROJECT_DIR$/chapter10" />
+            <option value="$PROJECT_DIR$/chapter11" />
+            <option value="$PROJECT_DIR$/chapter12" />
+            <option value="$PROJECT_DIR$/chapter13" />
+            <option value="$PROJECT_DIR$/chapter14" />
+            <option value="$PROJECT_DIR$/chapter15" />
+            <option value="$PROJECT_DIR$/chapter16" />
+            <option value="$PROJECT_DIR$/chapter17" />
+            <option value="$PROJECT_DIR$/chapter18" />
+            <option value="$PROJECT_DIR$/chapter19" />
+            <option value="$PROJECT_DIR$/chapter20" />
+            <option value="$PROJECT_DIR$/hmsml" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
