@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter16">
+
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Android10之后，计步器需要健身运动权限 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <!-- 存储卡读写 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 后台定位（Android10新增权限） -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- 腾讯地图 SDK 要求的权限(开始) -->
+    <!-- 访问网络获取地图服务 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 检查网络可用性 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 需要外部存储写权限用于保存地图缓存 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 获取 device id 辨别设备 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SensorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" />
+        <activity android:name=".AccelerationActivity" />
+        <activity android:name=".DirectionActivity" />
+        <activity android:name=".StepActivity" />
+        <activity android:name=".LightActivity" />
+        <activity android:name=".GyroscopeActivity" />
+        <activity android:name=".LocationSettingActivity" />
+        <activity android:name=".LocationBeginActivity" />
+        <activity android:name=".LocationAddressActivity" />
+        <activity android:name=".SatelliteSphereActivity" />
+        <activity android:name=".MapLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MapBasicActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MapSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MapNavigationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ChooseLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".InfoEditActivity" />
+        <activity
+            android:name=".NearbyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="V5RBZ-46F3X-7ZJ4P-7TXVX-FOYAT-TLFQS" />
+    </application>
+
+</manifest>
