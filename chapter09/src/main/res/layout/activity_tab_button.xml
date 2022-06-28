@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <!-- 复选框的背景、文字颜色和顶部图标都采用了状态图形，看起来像个崭新的标签控件 -->
+    <CheckBox
+        android:id="@+id/ck_tab"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:button="@null"
+        android:background="@drawable/tab_bg_selector"
+        android:text="点我"
+        android:textSize="12sp"
+        android:textColor="@drawable/tab_text_selector"
+        android:drawableTop="@drawable/tab_first_selector" />
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这里查看标签选择结果"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            style="@style/TabButton"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_first_selector"
+            android:text="首页" />
+
+        <CheckBox
+            style="@style/TabButton"
+            android:drawableTop="@drawable/tab_second_selector"
+            android:text="分类" />
+
+        <CheckBox
+            style="@style/TabButton"
+            android:drawableTop="@drawable/tab_third_selector"
+            android:text="购物车" />
+    </LinearLayout>
+
+</LinearLayout>

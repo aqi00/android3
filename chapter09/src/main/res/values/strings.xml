@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">chapter09</string>
+
+    <string name="menu_first">首页</string>
+    <string name="menu_second">分类</string>
+    <string name="menu_third">购物车</string>
+    <string name="book_name">Android Studio开发实战\n从零基础到App上线</string>
+    <!--
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    -->
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">仪表盘</string>
+    <string name="title_notifications">消息</string>
+</resources>
