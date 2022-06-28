@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_cover"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="54dp"
+        android:layout_height="96dp" />
+
+    <View
+        android:id="@+id/v_box"
+        android:layout_width="54dp"
+        android:layout_height="96dp"
+        android:background="@drawable/shape_box_frame" />
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter14">
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 存储卡读写 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AudioPlayActivity" />
+        <activity android:name=".AudioRecordActivity" />
+        <activity android:name=".MediaRecorderActivity" />
+        <activity android:name=".PhotoTakeActivity" />
+        <activity android:name=".VideoRecordActivity" />
+        <activity android:name=".VideoPlayActivity" />
+        <activity android:name=".VideoFrameActivity" />
+        <activity android:name=".PhotoGridActivity" />
+        <activity android:name=".CameraxPhotoActivity" />
+        <activity android:name=".PhotoDetailActivity" />
+        <activity android:name=".CameraxRecordActivity" />
+        <activity android:name=".VideoDetailActivity" />
+        <activity
+            android:name=".ExoPlayerActivity"
+            android:configChanges="screenLayout|orientation"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShortViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShortTakeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShortEditActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".ShortCoverActivity"
+            android:theme="@style/AppCompatTheme" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/file_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

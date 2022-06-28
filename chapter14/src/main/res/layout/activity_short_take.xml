@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/rl_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.chapter14.widget.CameraXView
+            android:id="@+id/cxv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="640dp" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:src="@drawable/icon_back_white" />
+
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/switch_camera" />
+    </RelativeLayout>
+
+    <VideoView
+        android:id="@+id/vv_content"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"
+            android:text="0.0秒"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_record"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_below="@+id/tv_cost"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/short_start" />
+
+        <com.example.chapter14.widget.ArcView
+            android:id="@+id/av_progress"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_below="@+id/tv_cost"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:text="相册"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:background="@color/gray"
+        android:text="取消"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:background="@color/rose"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
