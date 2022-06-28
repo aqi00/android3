@@ -1,0 +1,43 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="下面是系统自带的列表视图"
+            android:textColor="#ff0000"
+            android:textSize="17sp" />
+
+        <ListView
+            android:id="@+id/lv_planet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:dividerHeight="1dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="下面是自定义的列表视图"
+            android:textColor="#00ff00"
+            android:textSize="17sp" />
+
+        <!-- 自定义的不滚动列表视图，需要使用全路径 -->
+        <com.example.chapter08.widget.NoScrollListView
+            android:id="@+id/nslv_planet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+</ScrollView>

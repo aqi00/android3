@@ -1,0 +1,12 @@
+<resources>
+
+    <declare-styleable name="CustomButton">
+        <attr name="customButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomPagerTab">
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+    
+</resources>

@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 自定义的广告轮播条，需要使用全路径 -->
+    <com.example.chapter08.widget.BannerPager
+        android:id="@+id/banner_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="上面的广告图片会自动轮播"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>

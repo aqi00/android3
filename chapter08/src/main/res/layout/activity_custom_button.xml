@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这是系统默认的Button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这是来自style的Button"
+        style="@style/CommonButton"/>
+
+    <!-- 注意自定义控件需要指定该控件的完整路径 -->
+    <com.example.chapter08.widget.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这是自定义的Button"
+        android:background="#ffff00"/>
+
+</LinearLayout>

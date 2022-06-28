@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <!-- 自定义的饼图动画，需要使用全路径 -->
+    <com.example.chapter08.widget.PieAnimation
+        android:id="@+id/pa_circle"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter08">
+
+    <!-- 允许前台服务（Android 9.0之后需要） -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 悬浮窗 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CustomButtonActivity" />
+        <activity android:name=".MeasureTextActivity" />
+        <activity android:name=".MeasureLayoutActivity" />
+        <activity android:name=".ShowDrawActivity" />
+        <activity android:name=".MonthPickerActivity" />
+        <activity android:name=".CustomTabActivity" />
+        <activity android:name=".NoscrollListActivity" />
+        <activity android:name=".NotifySimpleActivity" />
+        <activity android:name=".NotifyCounterActivity" />
+        <activity android:name=".NotifyChannelActivity" />
+        <activity android:name=".ForegroundServiceActivity" />
+        <activity android:name=".FloatNoticeActivity" />
+        <activity android:name=".HandlerPostActivity" />
+        <activity android:name=".ViewInvalidateActivity" />
+        <activity android:name=".PieAnimationActivity" />
+        <activity android:name=".BannerPagerActivity" />
+
+        <service android:name=".service.MusicService" />
+    </application>
+
+</manifest>
