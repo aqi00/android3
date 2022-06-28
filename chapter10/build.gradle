@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.chapter10"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 自定义输出配置
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称类似test_v1.0_huawei.apk
+                        def fileName = "test_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+                        outputFileName = fileName
+                    }
+                }
+            }
+        }
+    }
+
+    flavorDimensions "versionCode" // 指定风味维度。多渠道打包需要
+
+    // 指定产品风味（下面一共设定了五种风味：华为、荣耀、小米、OPPO、vivo）
+    productFlavors {
+        huawei {}
+        rongyao {}
+        xiaomi {}
+        oppo {}
+        vivo {}
+    }
+
+    // 遍历每种风味，分别对AndroidManifest.xml的UMENG_CHANNEL_VALUE赋值
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/tv_debug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="App调试标志为："
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_debug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="点击按钮查看日志输出"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>
