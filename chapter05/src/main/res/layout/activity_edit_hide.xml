@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="输入11位时自动隐藏输入法"
+        android:inputType="number"
+        android:maxLength="11"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:hint="输入6位时自动隐藏输入法"
+        android:inputType="numberPassword"
+        android:maxLength="6"
+        android:background="@drawable/editext_selector"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="下面是登录信息"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLength="10"
+        android:hint="请输入用户名"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLength="8"
+        android:hint="请输入密码"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="下面是手机信息"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="11"
+        android:hint="请输入11位手机号码"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:maxLength="6"
+        android:hint="请输入6位服务密码"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+    
+</LinearLayout>
