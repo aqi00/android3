@@ -15,7 +15,7 @@ import com.example.chapter04.util.DateUtil;
 
 public class BroadOrderActivity extends AppCompatActivity implements View.OnClickListener {
     private final static String TAG = "BroadOrderActivity";
-    private final static String ORDER_ACTION = "com.example.chapter09.order";
+    private final static String ORDER_ACTION = "com.example.chapter04.order";
     private CheckBox ck_abort;
     private TextView tv_order;
 

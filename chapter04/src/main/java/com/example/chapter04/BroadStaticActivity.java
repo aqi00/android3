@@ -24,7 +24,7 @@ public class BroadStaticActivity extends AppCompatActivity implements View.OnCli
         if (v.getId() == R.id.btn_send_shock) {
             // Android8.0之后删除了大部分静态注册，防止退出App后仍在接收广播，
             // 为了让应用能够继续接收静态广播，需要给静态注册的广播指定包名。
-            String receiverPath = "com.example.chapter09.receiver.ShockReceiver";
+            String receiverPath = "com.example.chapter04.receiver.ShockReceiver";
             Intent intent = new Intent(ShockReceiver.SHOCK_ACTION); // 创建一个指定动作的意图
             // 发送静态广播之时，需要通过setComponent方法指定接收器的完整路径
             ComponentName componentName  = new ComponentName(this, receiverPath);

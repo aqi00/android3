@@ -15,7 +15,7 @@ import com.example.chapter04.util.DateUtil;
 public class BroadStandardActivity extends AppCompatActivity implements View.OnClickListener {
     private final static String TAG = "BroadStandardActivity";
     // 这是广播的动作名称，发送广播和接收广播都以它作为接头暗号
-    private final static String STANDARD_ACTION = "com.example.chapter09.standard";
+    private final static String STANDARD_ACTION = "com.example.chapter04.standard";
     private TextView tv_standard; // 声明一个文本视图对象
     private String mDesc = "这里查看标准广播的收听信息";
 

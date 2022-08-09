@@ -9,7 +9,7 @@ import android.util.Log;
 public class ShockReceiver extends BroadcastReceiver {
     private static final String TAG = "ShockReceiver";
     // 静态注册时候的action、发送广播时的action、接收广播时的action，三者需要保持一致
-    public static final String SHOCK_ACTION = "com.example.chapter09.shock";
+    public static final String SHOCK_ACTION = "com.example.chapter04.shock";
 
     @Override
     public void onReceive(Context context, Intent intent) {
