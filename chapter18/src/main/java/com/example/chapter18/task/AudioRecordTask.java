@@ -1,12 +1,16 @@
 package com.example.chapter18.task;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.media.AudioRecord;
 import android.media.AudioRecord.OnRecordPositionUpdateListener;
 import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+
+import androidx.core.app.ActivityCompat;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -43,6 +47,9 @@ public class AudioRecordTask extends Thread {
             // 根据定义好的几个配置，来获取合适的缓冲大小
             int bufferSize = AudioRecord.getMinBufferSize(mFrequence, mChannel, mFormat);
             byte[] buffer = new byte[bufferSize]; // 创建缓冲区
+            if (ActivityCompat.checkSelfPermission(mAct, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
             // 根据音频配置和缓冲区构建原始音频录制实例
             AudioRecord record = new AudioRecord(MediaRecorder.AudioSource.MIC,
                     mFrequence, mChannel, mFormat, bufferSize);

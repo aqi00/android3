@@ -20,6 +20,7 @@ import okhttp3.Response;
 
 public class GetWeatherTask extends Thread {
     private static final String TAG = "GetWeatherTask";
+    // 下面查询地址中的key值需要自己到高德开放平台申请带Web服务的测试应用
     private String mQueryUrl = "https://restapi.amap.com/v3/weather/weatherInfo?city=%s&key=8df51cca4080f563eac98e1ba51bdf90";
     private Activity mAct; // 声明一个活动实例
     private OnWeatherListener mListener; // 声明一个获取天气信息的监听器对象
