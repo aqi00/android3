@@ -78,8 +78,8 @@ public class GifActivity extends AppCompatActivity {
                     Toast.makeText(GifActivity.this, "显示HEIF图片需要Android9及更高版本", Toast.LENGTH_SHORT).show();
                 }
             } else if (arg2 == 3) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    showSpecial(R.raw.app2); // 显示Avif图片（扩展名为avif）
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    showSpecial(R.raw.app); // 显示Avif图片（扩展名为avif）
                 } else {
                     Toast.makeText(GifActivity.this, "显示AVIF图片需要Android12及更高版本", Toast.LENGTH_SHORT).show();
                 }
@@ -156,7 +156,7 @@ public class GifActivity extends AppCompatActivity {
         Drawable drawable = ImageDecoder.decodeDrawable(source, (decoder, info, source1) -> {
             // 获取图像信息的媒体类型与是否动图
             String desc = String.format("该图片类型为%s，它%s动图",
-                    "image/avif", info.isAnimated()?"是":"不是");
+                    info.getMimeType(), info.isAnimated()?"是":"不是");
             tv_info.setText(desc);
         });
         iv_gif.setImageDrawable(drawable); // 设置图像视图的图形对象
