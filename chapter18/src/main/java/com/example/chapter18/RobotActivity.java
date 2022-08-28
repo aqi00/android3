@@ -13,6 +13,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -354,6 +355,10 @@ public class RobotActivity extends AppCompatActivity {
         criteria.setPowerRequirement(Criteria.POWER_LOW); // 设置对电源的需求
         // 获取定位管理器的最佳定位提供者
         String bestProvider = mLocationMgr.getBestProvider(criteria, true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // 实测发现部分手机的android11系统使用卫星定位会没返回
+            bestProvider = "network";
+        }
         if (mLocationMgr.isProviderEnabled(bestProvider)) { // 定位提供者当前可用
             beginLocation(bestProvider); // 开始定位
         }

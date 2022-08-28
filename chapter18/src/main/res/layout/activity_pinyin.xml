@@ -12,6 +12,7 @@
         android:layout_marginRight="5dp"
         android:gravity="left|top"
         android:background="@drawable/editext_selector"
+        android:text="歌唱我们亲爱的祖国，从今走向繁荣富强"
         android:textColor="@color/black"
         android:textSize="17sp" />
 
