@@ -22,6 +22,7 @@ import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
+import com.example.chapter14.util.BitmapUtil;
 import com.example.chapter14.util.DateUtil;
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -169,6 +170,7 @@ public class CameraXView extends RelativeLayout {
         mImageCapture.takePicture(options, mExecutorService, new ImageCapture.OnImageSavedCallback() {
             @Override
             public void onImageSaved(ImageCapture.OutputFileResults outputFileResults) {
+                BitmapUtil.notifyPhotoAlbum(mContext, mPhotoPath); // 通知相册来了张新图片
                 mStopListener.onStop("已完成拍摄，照片保存路径为"+mPhotoPath);
             }
 

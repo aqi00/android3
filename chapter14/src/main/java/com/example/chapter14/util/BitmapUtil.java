@@ -1,10 +1,12 @@
 package com.example.chapter14.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.FileOutputStream;
@@ -64,6 +66,20 @@ public class BitmapUtil {
         // 获得比例缩放之后的位图对象
         Bitmap zoomBitmap = getScaleBitmap(origin, 1.0/ratio);
         return zoomBitmap;
+    }
+
+    // 通知相册来了张新图片
+    public static void notifyPhotoAlbum(Context ctx, String filePath) {
+        try {
+            String fileName = filePath.substring(filePath.lastIndexOf("/")+1);
+            MediaStore.Images.Media.insertImage(ctx.getContentResolver(),
+                    filePath, fileName, null);
+            Uri uri = Uri.parse("file://" + filePath);
+            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri);
+            ctx.sendBroadcast(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
