@@ -38,8 +38,8 @@ public class LocationBeginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_begin);
-        providerMap.put("gps", "卫星定位");
-        providerMap.put("network", "网络定位");
+        providerMap.put(LocationManager.GPS_PROVIDER, "卫星定位");
+        providerMap.put(LocationManager.NETWORK_PROVIDER, "网络定位");
         tv_location = findViewById(R.id.tv_location);
         SwitchUtil.checkLocationIsOpen(this, "需要打开定位功能才能查看定位信息");
     }
@@ -66,7 +66,7 @@ public class LocationBeginActivity extends AppCompatActivity {
         String bestProvider = mLocationMgr.getBestProvider(criteria, true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // 实测发现部分手机的android11系统使用卫星定位会没返回
-            bestProvider = "network";
+            bestProvider = LocationManager.NETWORK_PROVIDER;
         }
         if (mLocationMgr.isProviderEnabled(bestProvider)) { // 定位提供者当前可用
             tv_location.setText("正在获取" + providerMap.get(bestProvider) + "对象");

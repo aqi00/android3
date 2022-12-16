@@ -48,8 +48,8 @@ public class SatelliteSphereActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_satellite_sphere);
-        providerMap.put("gps", "卫星");
-        providerMap.put("network", "网络");
+        providerMap.put(LocationManager.GPS_PROVIDER, "卫星");
+        providerMap.put(LocationManager.NETWORK_PROVIDER, "网络");
         tv_satellite = findViewById(R.id.tv_satellite);
         cv_satellite = findViewById(R.id.cv_satellite);
         SwitchUtil.checkLocationIsOpen(this, "需要打开定位功能才能查看卫星导航信息");
@@ -77,7 +77,7 @@ public class SatelliteSphereActivity extends AppCompatActivity {
         String bestProvider = mLocationMgr.getBestProvider(mCriteria, true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // 实测发现部分手机的android11系统使用卫星定位会没返回
-            bestProvider = "network";
+            bestProvider = LocationManager.NETWORK_PROVIDER;
         }
         if (mLocationMgr.isProviderEnabled(bestProvider)) {  // 定位提供者当前可用
             mLocationType = providerMap.get(bestProvider)+"定位";
