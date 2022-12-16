@@ -357,7 +357,7 @@ public class RobotActivity extends AppCompatActivity {
         String bestProvider = mLocationMgr.getBestProvider(criteria, true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // 实测发现部分手机的android11系统使用卫星定位会没返回
-            bestProvider = "network";
+            bestProvider = LocationManager.NETWORK_PROVIDER;
         }
         if (mLocationMgr.isProviderEnabled(bestProvider)) { // 定位提供者当前可用
             beginLocation(bestProvider); // 开始定位
