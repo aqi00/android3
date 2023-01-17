@@ -30,7 +30,7 @@ public class TouchSingleActivity extends AppCompatActivity {
             desc = String.format("%s按下", desc);
         } else if (action == MotionEvent.ACTION_MOVE) { // 移动手指
             desc = String.format("%s移动", desc);
-        } else if (action == MotionEvent.ACTION_UP) { // 松开手指
+        } else if (action == MotionEvent.ACTION_UP) { // 提起手指
             desc = String.format("%s提起", desc);
         } else if (action == MotionEvent.ACTION_CANCEL) { // 取消手势
             desc = String.format("%s取消", desc);

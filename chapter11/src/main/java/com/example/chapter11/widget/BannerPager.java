@@ -52,7 +52,7 @@ public class BannerPager extends RelativeLayout {
             mOffsetY = 0.0F;
             mLastPos = new PointF(event.getX(), event.getY());
             result = super.onTouchEvent(event);
-        } else { // 其余动作，包括移动手指、松开手指等等
+        } else { // 其余动作，包括移动手指、提起手指等等
             PointF thisPos = new PointF(event.getX(), event.getY());
             mOffsetX += Math.abs(thisPos.x - mLastPos.x); // x轴偏差
             mOffsetY += Math.abs(thisPos.y - mLastPos.y); // y轴偏差

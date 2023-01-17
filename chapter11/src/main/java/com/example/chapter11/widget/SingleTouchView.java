@@ -33,7 +33,7 @@ public class SingleTouchView extends View {
     private void initView() {
         mPathPaint = new Paint(); // 创建路径的画笔
         mPathPaint.setStrokeWidth(5); // 设置画笔的线宽
-        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mPathPaint.setColor(Color.BLACK); // 设置画笔的颜色
         mBeginPaint = new Paint(); // 创建起点的画笔
         mBeginPaint.setColor(Color.RED); // 设置画笔的颜色
@@ -70,7 +70,7 @@ public class SingleTouchView extends View {
                 // 连接上一个坐标点和当前坐标点
                 mPath.quadTo(mLastPos.x, mLastPos.y, event.getX(), event.getY());
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 mEndPos = new PointF(event.getX(), event.getY());
                 // 连接上一个坐标点和当前坐标点
                 mPath.quadTo(mLastPos.x, mLastPos.y, event.getX(), event.getY());

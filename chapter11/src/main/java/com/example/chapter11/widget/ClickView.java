@@ -51,7 +51,7 @@ public class ClickView extends View {
                 break;
             case MotionEvent.ACTION_MOVE: // 移动手指
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 if (mListener != null) { // 触发手势抬起事件
                     mListener.onLift(event.getEventTime()-mLastTime, mPressure);
                 }

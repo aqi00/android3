@@ -110,7 +110,7 @@ public class PullDownRefreshLayout extends LinearLayout implements View.OnTouchL
             // 下拉刷新的头部布局露出庐山真面目啦
             mLinearLayout.setPadding(0, dragOffset, 0, 0);
             mLinearLayout.postInvalidate(); // 立刻刷新线性布局（线程安全方式）
-        } else if (action == MotionEvent.ACTION_UP) { // 松开手指
+        } else if (action == MotionEvent.ACTION_UP) { // 提起手指
             // 下拉距离太短，则直接将页面恢复原状。只有下拉距离足够长，才会触发页面刷新动作
             if (offsetY <= Utils.dip2px(mContext, 150)) {
                 resumePage(); // 恢复主页面

@@ -48,7 +48,7 @@ public class SignatureView extends View {
     // 初始化视图
     private void initView() {
         mPathPaint.setStrokeWidth(mStrokeWidth); // 设置画笔的线宽
-        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mPathPaint.setColor(mPathPaintColor); // 设置画笔的颜色
         setDrawingCacheEnabled(true); // 开启当前视图的绘图缓存
     }
@@ -98,7 +98,7 @@ public class SignatureView extends View {
                 mPathPos = new PathPosition(); // 创建新的路径位置
                 mPathPos.prePos = new PointF(event.getX(), event.getY());
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 // 连接上一个坐标点和当前坐标点
                 mPath.quadTo(mLastPos.x, mLastPos.y, event.getX(), event.getY());
                 break;

@@ -39,18 +39,18 @@ public class MultiTouchView extends View {
     private void initView() {
         mPathPaint = new Paint(); // 创建路径的画笔
         mPathPaint.setStrokeWidth(5); // 设置画笔的线宽
-        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mPathPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mPathPaint.setColor(Color.BLACK); // 设置画笔的颜色
         PathEffect thinDash = new DashPathEffect(new float[]{dip_10,dip_10},1);
         mBeginPaint = new Paint(); // 创建起点连线的画笔
         mBeginPaint.setStrokeWidth(3); // 设置画笔的线宽
-        mBeginPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mBeginPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mBeginPaint.setColor(Color.RED); // 设置画笔的颜色
         mBeginPaint.setPathEffect(thinDash); // 设置虚线的样式
         PathEffect denseDash = new DashPathEffect(new float[]{dip_5,dip_5},1);
         mEndPaint = new Paint(); // 创建终点连线的画笔
         mEndPaint.setStrokeWidth(3); // 设置画笔的线宽
-        mEndPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mEndPaint.setStyle(Paint.Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mEndPaint.setColor(Color.GREEN); // 设置画笔的颜色
         mEndPaint.setPathEffect(denseDash); // 设置虚线的样式
     }
