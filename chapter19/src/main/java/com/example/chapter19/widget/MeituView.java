@@ -168,7 +168,7 @@ public class MeituView extends View {
                     setBitmapRect(rect); // 设置位图的矩形边界
                 }
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 // 判断点击和长按
                 if (mListener != null && Math.abs(event.getX() - mOriginPos.x) < mInterval &&
                         Math.abs(event.getY() - mOriginPos.y) < mInterval) {
