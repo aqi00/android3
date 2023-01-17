@@ -26,7 +26,7 @@ public class ArcView extends View {
         mLineWidth = Utils.dip2px(context, 5);
         mPaint.setColor(context.getResources().getColor(R.color.rose));
         mPaint.setStrokeWidth(mLineWidth); // 设置画笔的线宽
-        mPaint.setStyle(Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mPaint.setStyle(Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         mPaint.setAntiAlias(true); // 设置抗锯齿
         mPaint.setStrokeCap(Paint.Cap.ROUND); // 设置线头的类型。ROUND表示圆线头
     }
