@@ -55,7 +55,7 @@ public class CompassView extends View {
         mPaintLine.setAntiAlias(true); // 设置抗锯齿
         mPaintLine.setColor(Color.GREEN); // 设置画笔的颜色
         mPaintLine.setStrokeWidth(2); // 设置画笔的线宽
-        mPaintLine.setStyle(Style.STROKE); // 设置画笔的类型。STROK表示空心，FILL表示实心
+        mPaintLine.setStyle(Style.STROKE); // 设置画笔的类型。STROKE表示空心，FILL表示实心
         // 以下初始化文字的画笔
         mPaintText = new Paint();
         mPaintText.setAntiAlias(true); // 设置抗锯齿
