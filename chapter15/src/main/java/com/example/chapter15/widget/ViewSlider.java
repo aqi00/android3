@@ -110,7 +110,7 @@ public class ViewSlider extends FrameLayout {
                     }
                 }
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 if ((mPos==0 && distanceX>0) || (mPos==mPathList.size()-1 && distanceX<0)) {
                     break; // 第一页不准往前翻页，最后一页不准往后翻页
                 }

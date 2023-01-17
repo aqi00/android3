@@ -127,7 +127,7 @@ public class CurveView extends View {
                     showTouchResult(x, y, mClickType); // 显示触摸结果
                 }
                 break;
-            case MotionEvent.ACTION_UP: // 松开手指
+            case MotionEvent.ACTION_UP: // 提起手指
                 if (needMove) {
                     needChange = x < mViewWidth / 2;
                     if (needChange) {
