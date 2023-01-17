@@ -59,7 +59,7 @@ public class ScrollLayout extends LinearLayout {
             mOriginPos = new PointF(event.getX(), event.getY());
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) { // 移动手指
             moveView(mOriginPos, nowPos); // 把视图从起点移到终点
-        } else if (event.getAction() == MotionEvent.ACTION_UP) { // 松开手指
+        } else if (event.getAction() == MotionEvent.ACTION_UP) { // 提起手指
             if (moveView(mOriginPos, nowPos)) { // 需要继续滚动
                 isScrolling = true;
                 judgeScroll(mOriginPos, nowPos); // 判断滚动方向，并发出滚动命令
