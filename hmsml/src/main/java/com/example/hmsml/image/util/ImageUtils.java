@@ -51,8 +51,9 @@ public class ImageUtils {
         String filePath = null;
         File file = null;
         String fileName = System.currentTimeMillis() +".jpg";
-        File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), this.context.getPackageName());
-        File dir = new File(root, "image");
+        //File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), this.context.getPackageName());
+        //File dir = new File(root, "image");
+        File dir = new File(this.context.getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS)[0], "image");
         if(dir.mkdirs() || dir.isDirectory()){
             file = new File(dir, fileName);
         }
