@@ -259,8 +259,9 @@ public class BitmapUtils {
     public static void saveToAlbum(Bitmap bitmap, final Context context){
         File file = null;
         String fileName = System.currentTimeMillis() +".jpg";
-        File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), context.getPackageName());
-        File dir = new File(root, "image");
+        //File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), context.getPackageName());
+        //File dir = new File(root, "image");
+        File dir = new File(context.getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS)[0], "image");
         if(dir.mkdirs() || dir.isDirectory()){
             file = new File(dir, fileName);
         }
