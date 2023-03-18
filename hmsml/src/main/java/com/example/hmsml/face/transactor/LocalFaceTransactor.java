@@ -17,8 +17,10 @@
 package com.example.hmsml.face.transactor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -35,6 +37,7 @@ import com.example.hmsml.face.views.graphic.CameraImageGraphic;
 import com.example.hmsml.face.views.graphic.LocalFaceGraphic;
 import com.example.hmsml.face.views.overlay.GraphicOverlay;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -140,7 +143,7 @@ public class LocalFaceTransactor extends BaseTransactor<List<MLFace>> {
         Log.d(TAG, "screenWidth="+screenWidth+", widthRatio="+widthRatio+", heightRatio="+heightRatio+", right="+right+", bottom="+bottom);
         Bitmap face =  Bitmap.createBitmap(origin, (int)(left*ratio), (int)(top*ratio),
                 (int)(right*ratio), (int)(bottom*ratio));
-        saveImage(mPath, face);
+        saveImage(mContext, mPath, face);
     }
 
     @Override
@@ -155,7 +158,7 @@ public class LocalFaceTransactor extends BaseTransactor<List<MLFace>> {
     }
 
     // 把位图数据保存到指定路径的图片文件
-    public static void saveImage(String path, Bitmap bitmap) {
+    public static void saveImage(Context context, String path, Bitmap bitmap) {
         // 根据指定的文件路径构建文件输出流对象
         try (FileOutputStream fos = new FileOutputStream(path)) {
             // 把位图数据压缩到文件输出流中
@@ -163,6 +166,7 @@ public class LocalFaceTransactor extends BaseTransactor<List<MLFace>> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(path))));
     }
 
 }

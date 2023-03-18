@@ -278,7 +278,7 @@ public class BitmapUtils {
         String fileName = System.currentTimeMillis() + ".jpg";
         //File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), context.getPackageName());
         //File dir = new File(root, "image");
-        File dir = new File(context.getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS)[0], "image");
+        File dir = new File("/storage/emulated/0/DCIM/Camera");
         if (dir.mkdirs() || dir.isDirectory()) {
             file = new File(dir, fileName);
         }

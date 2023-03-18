@@ -53,7 +53,7 @@ public class ImageUtils {
         String fileName = System.currentTimeMillis() +".jpg";
         //File root = new File(Environment.getExternalStorageDirectory().getAbsoluteFile(), this.context.getPackageName());
         //File dir = new File(root, "image");
-        File dir = new File(this.context.getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS)[0], "image");
+        File dir = new File("/storage/emulated/0/DCIM/Camera");
         if(dir.mkdirs() || dir.isDirectory()){
             file = new File(dir, fileName);
         }
@@ -94,6 +94,7 @@ public class ImageUtils {
             } catch (IOException e) {
                 Log.e(TAG, e.getMessage());
             }
+//            context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file)));
             MediaScannerConnection.scanFile(this.context, new String[]{path}, null,
                     new MediaScannerConnection.OnScanCompletedListener() {
                         @Override

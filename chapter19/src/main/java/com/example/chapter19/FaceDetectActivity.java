@@ -43,7 +43,7 @@ public class FaceDetectActivity extends AppCompatActivity {
     // 保存人脸图片
     private void saveFace() {
         String path = String.format("%s/%s.jpg",
-                getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString(), DateUtil.getNowDateTime());
+                "/storage/emulated/0/DCIM/Camera", DateUtil.getNowDateTime());
         Log.d(TAG, "path="+path);
         mTransactor.saveFace(path); // 人脸办理器对象保存人脸
         //BitmapUtil.notifyPhotoAlbum(this, path);
