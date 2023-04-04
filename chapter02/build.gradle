@@ -35,7 +35,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // 指定编译Android的高版本支持库。如AppCompatActivity必须指定编译appcompat库
     //appcompat库各版本见 https://mvnrepository.com/artifact/androidx.appcompat/appcompat
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     // 指定单元测试编译用的junit版本号
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
