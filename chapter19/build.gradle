@@ -59,6 +59,9 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-vision-faceverify-model:2.2.0.300'
     // 活体检测需要
     implementation 'com.huawei.hms:ml-computer-vision-livenessdetection:2.2.0.300'
+    // 人像抠图需要
+    implementation 'com.huawei.hms:ml-computer-vision-segmentation:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:2.2.0.300'
 
     // room库各版本见 https://mvnrepository.com/artifact/androidx.room/room-runtime
     implementation 'androidx.room:room-runtime:2.4.2'
