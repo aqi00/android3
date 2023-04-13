@@ -17,9 +17,13 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            //shrinkResources true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 过滤第三方库多余的so，例如x86、x86_64这些个人电脑的英特尔指令集
+            ndk {
+                abiFilters "arm64-v8a", "armeabi-v7a" // 保留这两种指令架构的so文件
+            }
             // 自定义输出配置
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
