@@ -70,9 +70,10 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
     // 发送闹钟广播
     private void sendAlarm() {
         Intent intent = new Intent(ALARM_ACTION); // 创建一个广播事件的意图
+        // 从Android12开始，必须添加 FLAG_IMMUTABLE 或者 FLAG_MUTABLE
         // 创建一个用于广播的延迟意图
         PendingIntent pIntent = PendingIntent.getBroadcast(this, 0,
-                intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         // 从系统服务中获取闹钟管理器
         AlarmManager alarmMgr = (AlarmManager) getSystemService(ALARM_SERVICE);
         long delayTime = System.currentTimeMillis() + mDelay*1000; // 给当前时间加上若干秒
