@@ -48,8 +48,12 @@ public class SatelliteSphereActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_satellite_sphere);
-        providerMap.put(LocationManager.GPS_PROVIDER, "卫星");
-        providerMap.put(LocationManager.NETWORK_PROVIDER, "网络");
+        providerMap.put(LocationManager.GPS_PROVIDER, "卫星定位");
+        providerMap.put(LocationManager.NETWORK_PROVIDER, "网络定位");
+        providerMap.put(LocationManager.PASSIVE_PROVIDER, "被动定位");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            providerMap.put(LocationManager.FUSED_PROVIDER, "融合定位");
+        }
         tv_satellite = findViewById(R.id.tv_satellite);
         cv_satellite = findViewById(R.id.cv_satellite);
         SwitchUtil.checkLocationIsOpen(this, "需要打开定位功能才能查看卫星导航信息");
@@ -80,8 +84,10 @@ public class SatelliteSphereActivity extends AppCompatActivity {
 //            bestProvider = LocationManager.NETWORK_PROVIDER;
 //        }
         if (mLocationMgr.isProviderEnabled(bestProvider)) {  // 定位提供者当前可用
-            mLocationType = providerMap.get(bestProvider)+"定位";
-            beginLocation(bestProvider); // 开始定位
+            mLocationType = providerMap.get(bestProvider);
+            //beginLocation(bestProvider); // 开始定位
+            // 必须使用卫星定位才能找到天上的导航卫星
+            beginLocation(LocationManager.GPS_PROVIDER); // 开始定位
             isLocationEnable = true;
         } else { // 定位提供者暂不可用
             isLocationEnable = false;

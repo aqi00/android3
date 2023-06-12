@@ -41,6 +41,10 @@ public class LocationAddressActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_address);
         providerMap.put(LocationManager.GPS_PROVIDER, "卫星定位");
         providerMap.put(LocationManager.NETWORK_PROVIDER, "网络定位");
+        providerMap.put(LocationManager.PASSIVE_PROVIDER, "被动定位");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            providerMap.put(LocationManager.FUSED_PROVIDER, "融合定位");
+        }
         tv_location = findViewById(R.id.tv_location);
         SwitchUtil.checkLocationIsOpen(this, "需要打开定位功能才能查看定位信息");
     }
