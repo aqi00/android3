@@ -33,6 +33,8 @@
     <!-- 如果Android6.0 蓝牙搜索不到设备，需要补充下面两个权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Android 12 getMacAddress需要 -->
+    <uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS" />
 
     <application
         android:allowBackup="true"

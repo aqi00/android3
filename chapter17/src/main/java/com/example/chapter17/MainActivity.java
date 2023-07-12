@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.btn_infrared) {
             startActivity(new Intent(this, InfraredActivity.class));
         } else if (v.getId() == R.id.btn_bluetooth_pair) {
-            // Android12之后使用蓝牙需要蓝牙连接权限
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADVERTISE) != PackageManager.PERMISSION_GRANTED) {
-                    mBlueLauncher1.launch(Manifest.permission.BLUETOOTH_CONNECT);
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, BluetoothPairActivity.class));
                 }
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 // Android6.0之后使用蓝牙需要定位权限
@@ -84,8 +84,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, BluetoothPairActivity.class));
             }
         } else if (v.getId() == R.id.btn_bluetooth_trans) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android12之后使用蓝牙需要蓝牙连接权限，Android6.0之后使用蓝牙需要定位权限
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, BluetoothTransActivity.class));
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android6.0之后使用蓝牙需要定位权限
                 if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                     startActivity(new Intent(this, BluetoothTransActivity.class));
                 }
@@ -93,8 +98,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, BluetoothTransActivity.class));
             }
         } else if (v.getId() == R.id.btn_ble_scan) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android12之后使用蓝牙需要蓝牙连接权限，Android6.0之后使用蓝牙需要定位权限
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, BleScanActivity.class));
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android6.0之后使用蓝牙需要定位权限
                 if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                     startActivity(new Intent(this, BleScanActivity.class));
                 }
@@ -102,8 +112,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, BleScanActivity.class));
             }
         } else if (v.getId() == R.id.btn_ble_advertise) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android12之后使用蓝牙需要蓝牙连接权限，Android6.0之后使用蓝牙需要定位权限
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_ADVERTISE, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, BleAdvertiseActivity.class));
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android6.0之后使用蓝牙需要定位权限
                 if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                     startActivity(new Intent(this, BleAdvertiseActivity.class));
                 }
@@ -111,8 +126,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, BleAdvertiseActivity.class));
             }
         } else if (v.getId() == R.id.btn_ble_chat) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android12之后使用蓝牙需要蓝牙连接权限，Android6.0之后使用蓝牙需要定位权限
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_ADVERTISE, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    gotoChat();
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android6.0之后使用蓝牙需要定位权限
                 if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                     gotoChat();
                 }
@@ -120,8 +140,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 gotoChat();
             }
         } else if (v.getId() == R.id.btn_scan_car) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                // Android12之后使用蓝牙需要蓝牙连接权限，Android6.0之后使用蓝牙需要定位权限
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android12之后使用蓝牙需要蓝牙连接权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, ScanCarActivity.class));
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android6.0之后使用蓝牙需要定位权限
                 if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                     startActivity(new Intent(this, ScanCarActivity.class));
                 }
