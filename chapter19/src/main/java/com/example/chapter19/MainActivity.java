@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,8 +46,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_hms_scan) {
-            if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.CAMERA}, (int) v.getId() % 65536)) {
-                startActivity(new Intent(this, HmsScanActivity.class));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android 12 扫码服务需要READ_PHONE_STATE权限
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.CAMERA, Manifest.permission.READ_PHONE_STATE}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, HmsScanActivity.class));
+                }
+            } else {
+                if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.CAMERA}, (int) v.getId() % 65536)) {
+                    startActivity(new Intent(this, HmsScanActivity.class));
+                }
             }
         } else if (v.getId() == R.id.btn_recognize_text) {
             if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.CAMERA}, (int) v.getId() % 65536)) {
