@@ -22,6 +22,7 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.MergingMediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.source.SingleSampleMediaSource;
+import com.google.android.exoplayer2.source.hls.HlsMediaSource;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSource;
@@ -31,7 +32,8 @@ import java.util.Locale;
 
 public class ExoPlayerActivity extends AppCompatActivity {
     private final static String TAG = "ExoPlayerActivity";
-    private final static String URL_HTTPS = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4";
+    //private final static String URL_HLS = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4";
+    private final static String URL_HLS = "https://live.nbs.cn/channels/njtv/xxpd/m3u8:500k/live.m3u8";
     private final static String URL_VIDEO = UrlConstant.HTTP_PREFIX + "海洋世界.mp4";
     private final static String URL_SUBTITLE = UrlConstant.HTTP_PREFIX + "海洋世界.srt";
     private ExoPlayer mPlayer; // 声明一个新型播放器对象
@@ -49,7 +51,7 @@ public class ExoPlayerActivity extends AppCompatActivity {
                     }
                 });
         findViewById(R.id.btn_play_local).setOnClickListener(v -> launcher.launch("video/*"));
-        findViewById(R.id.btn_play_network).setOnClickListener(v -> playVideo(Uri.parse(URL_HTTPS)));
+        findViewById(R.id.btn_play_hls).setOnClickListener(v -> playHlsVideo(Uri.parse(URL_HLS)));
         findViewById(R.id.btn_play_subtitle).setOnClickListener(v -> {
             Uri videoUri = Uri.parse(URL_VIDEO);
             Uri subtitleUri = Uri.parse(URL_SUBTITLE);
@@ -67,6 +69,33 @@ public class ExoPlayerActivity extends AppCompatActivity {
         MediaItem videoItem = new MediaItem.Builder().setUri(uri).build();
         // 基于工厂对象和媒体对象创建媒体来源
         MediaSource videoSource = new ProgressiveMediaSource.Factory(factory)
+                .createMediaSource(videoItem);
+        mPlayer.setMediaSource(videoSource); // 设置播放器的媒体来源
+        // 给播放器添加事件监听器
+        mPlayer.addListener(new Player.Listener() {
+            @Override
+            public void onPlaybackStateChanged(int state) {
+                if (state == Player.STATE_BUFFERING) { // 视频正在缓冲
+                    Log.d(TAG, "视频正在缓冲");
+                } else if (state == Player.STATE_READY) { // 视频准备就绪
+                    Log.d(TAG, "视频准备就绪");
+                } else if (state == Player.STATE_ENDED) { // 视频播放完毕
+                    Log.d(TAG, "视频播放完毕");
+                }
+            }
+        });
+        mPlayer.prepare(); // 播放器准备就绪
+        mPlayer.play(); // 播放器开始播放
+    }
+
+    // 播放HLS视频
+    private void playHlsVideo(Uri uri) {
+        Log.d(TAG, "playHlsVideo: "+uri.toString());
+        DataSource.Factory factory = new DefaultDataSource.Factory(this);
+        // 创建指定地址的媒体对象
+        MediaItem videoItem = new MediaItem.Builder().setUri(uri).build();
+        // 基于工厂对象和媒体对象创建媒体来源
+        MediaSource videoSource = new HlsMediaSource.Factory(factory)
                 .createMediaSource(videoItem);
         mPlayer.setMediaSource(videoSource); // 设置播放器的媒体来源
         // 给播放器添加事件监听器
@@ -149,12 +178,14 @@ public class ExoPlayerActivity extends AppCompatActivity {
         sp_welcome.setSelection(3);
     }
 
-    private String[] welcomeArray = {"首届（2018年）", "第二届（2019年）", "第三届（2020年）", "第四届（2021年）"};
+    private String[] welcomeArray = {"首届（2018年）", "第二届（2019年）", "第三届（2020年）", "第四届（2021年）", "第五届（2022年）", "第六届（2023年）"};
     private String[] urlArray = {
             "https://ptgl.fujian.gov.cn:8088/masvod/public/2018/04/17/20180417_162d3639356_r38_1200k.mp4",
             "https://ptgl.fujian.gov.cn:8088/masvod/public/2019/04/15/20190415_16a1ef11c24_r38_1200k.mp4",
             "https://ptgl.fujian.gov.cn:8088/masvod/public/2020/09/26/20200926_174c8f9e4b6_r38_1200k.mp4",
             "https://ptgl.fujian.gov.cn:8088/masvod/public/2021/03/19/20210319_178498bcae9_r38.mp4",
+            "https://www.fujian.gov.cn/masvod/public/2022/07/15/20220715_18201603713_r38_1200k.mp4",
+            "https://www.fujian.gov.cn/masvod/public/2023/04/25/20230425_187b71018de_r38_1200k.mp4"
     };
 
     class WelcomeSelectedListener implements AdapterView.OnItemSelectedListener {

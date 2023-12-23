@@ -18,11 +18,11 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/btn_play_network"
+            android:id="@+id/btn_play_hls"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="播放网络视频"
+            android:text="播放HLS视频"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
