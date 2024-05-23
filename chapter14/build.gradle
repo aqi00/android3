@@ -43,6 +43,10 @@ dependencies {
     implementation 'androidx.camera:camera-view:1.0.0-alpha32'
     // exoplayer库各版本见 https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer?repo=google
     implementation 'com.google.android.exoplayer:exoplayer:2.17.1'
+    // exoplayer-hls库各版本见 https://mvnrepository.com/artifact/com.google.android.exoplayer/exoplayer-hls
+    //implementation 'com.google.android.exoplayer:exoplayer-hls:2.17.1'
+    // extension-rtmp库各版本见 https://mvnrepository.com/artifact/com.google.android.exoplayer/extension-rtmp
+    implementation 'com.google.android.exoplayer:extension-rtmp:2.17.1'
     // swiperefreshlayout各版本见 https://mvnrepository.com/artifact/androidx.swiperefreshlayout/swiperefreshlayout
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     // viewpager2各版本见 https://mvnrepository.com/artifact/androidx.viewpager2/viewpager2
@@ -54,4 +58,5 @@ dependencies {
     // okhttp库各版本见 https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 
+    //implementation 'com.github.pedroSG94.RootEncoder:library:2.4.5'
 }

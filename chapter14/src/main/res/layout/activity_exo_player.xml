@@ -13,7 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="播放本地视频"
+            android:text="播放本地"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -22,7 +22,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="播放HLS视频"
+            android:text="播放HLS"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_play_rtmp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="播放RTMP"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -31,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="播放字幕视频"
+            android:text="播放字幕"
             android:textColor="@color/black"
             android:textSize="15sp" />
     </LinearLayout>

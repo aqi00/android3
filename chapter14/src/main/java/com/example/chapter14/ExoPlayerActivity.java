@@ -18,6 +18,7 @@ import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
+import com.google.android.exoplayer2.ext.rtmp.RtmpDataSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.MergingMediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
@@ -33,7 +34,16 @@ import java.util.Locale;
 public class ExoPlayerActivity extends AppCompatActivity {
     private final static String TAG = "ExoPlayerActivity";
     //private final static String URL_HLS = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4";
-    private final static String URL_HLS = "https://live.nbs.cn/channels/njtv/xxpd/m3u8:500k/live.m3u8";
+    //private final static String URL_HLS = "https://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8";
+
+    // ZLMediaKit
+//    private final static String URL_HLS = "http://124.70.221.25:8080/live/test/hls.m3u8";
+//    private final static String URL_RTMP = "rtmp://124.70.221.25/live/test";
+
+    // SRS
+    private final static String URL_HLS = "http://124.70.221.25:8080/live/test.m3u8";
+    private final static String URL_RTMP= "rtmp://124.70.221.25/live/test";
+
     private final static String URL_VIDEO = UrlConstant.HTTP_PREFIX + "海洋世界.mp4";
     private final static String URL_SUBTITLE = UrlConstant.HTTP_PREFIX + "海洋世界.srt";
     private ExoPlayer mPlayer; // 声明一个新型播放器对象
@@ -51,7 +61,8 @@ public class ExoPlayerActivity extends AppCompatActivity {
                     }
                 });
         findViewById(R.id.btn_play_local).setOnClickListener(v -> launcher.launch("video/*"));
-        findViewById(R.id.btn_play_hls).setOnClickListener(v -> playHlsVideo(Uri.parse(URL_HLS)));
+        findViewById(R.id.btn_play_hls).setOnClickListener(v -> playVideo(Uri.parse(URL_HLS)));
+        findViewById(R.id.btn_play_rtmp).setOnClickListener(v -> playVideo(Uri.parse(URL_RTMP)));
         findViewById(R.id.btn_play_subtitle).setOnClickListener(v -> {
             Uri videoUri = Uri.parse(URL_VIDEO);
             Uri subtitleUri = Uri.parse(URL_SUBTITLE);
@@ -68,35 +79,17 @@ public class ExoPlayerActivity extends AppCompatActivity {
         // 创建指定地址的媒体对象
         MediaItem videoItem = new MediaItem.Builder().setUri(uri).build();
         // 基于工厂对象和媒体对象创建媒体来源
-        MediaSource videoSource = new ProgressiveMediaSource.Factory(factory)
-                .createMediaSource(videoItem);
-        mPlayer.setMediaSource(videoSource); // 设置播放器的媒体来源
-        // 给播放器添加事件监听器
-        mPlayer.addListener(new Player.Listener() {
-            @Override
-            public void onPlaybackStateChanged(int state) {
-                if (state == Player.STATE_BUFFERING) { // 视频正在缓冲
-                    Log.d(TAG, "视频正在缓冲");
-                } else if (state == Player.STATE_READY) { // 视频准备就绪
-                    Log.d(TAG, "视频准备就绪");
-                } else if (state == Player.STATE_ENDED) { // 视频播放完毕
-                    Log.d(TAG, "视频播放完毕");
-                }
-            }
-        });
-        mPlayer.prepare(); // 播放器准备就绪
-        mPlayer.play(); // 播放器开始播放
-    }
-
-    // 播放HLS视频
-    private void playHlsVideo(Uri uri) {
-        Log.d(TAG, "playHlsVideo: "+uri.toString());
-        DataSource.Factory factory = new DefaultDataSource.Factory(this);
-        // 创建指定地址的媒体对象
-        MediaItem videoItem = new MediaItem.Builder().setUri(uri).build();
-        // 基于工厂对象和媒体对象创建媒体来源
-        MediaSource videoSource = new HlsMediaSource.Factory(factory)
-                .createMediaSource(videoItem);
+        MediaSource videoSource;
+        if (uri.getPath().endsWith("m3u8")) {
+            videoSource = new HlsMediaSource.Factory(factory)
+                    .createMediaSource(videoItem);
+        } else if (uri.getPath().startsWith("rtmp")) {
+            videoSource = new ProgressiveMediaSource.Factory(new RtmpDataSource.Factory())
+                    .createMediaSource(videoItem);
+        } else {
+            videoSource = new ProgressiveMediaSource.Factory(factory)
+                    .createMediaSource(videoItem);
+        }
         mPlayer.setMediaSource(videoSource); // 设置播放器的媒体来源
         // 给播放器添加事件监听器
         mPlayer.addListener(new Player.Listener() {
