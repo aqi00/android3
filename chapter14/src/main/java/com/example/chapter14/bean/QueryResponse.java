@@ -5,7 +5,7 @@ import java.util.List;
 public class QueryResponse {
     private String code; // 结果代码
     private String desc; // 结果描述
-    private List<com.example.chapter14.bean.VideoInfo> videoList; // 在线视频的路径列表
+    private List<VideoInfo> videoList; // 在线视频的路径列表
 
     public void setCode(String code) {
         this.code = code;

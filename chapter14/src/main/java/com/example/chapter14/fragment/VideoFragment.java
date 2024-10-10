@@ -57,7 +57,11 @@ public class VideoFragment extends Fragment {
         StyledPlayerView pv_content = mView.findViewById(R.id.pv_content);
         mPlayer = new ExoPlayer.Builder(mContext).build();
         pv_content.setPlayer(mPlayer); // 设置播放器视图的播放器对象
-        prepareVideo(UrlConstant.HTTP_PREFIX+mVideoInfo.getVideo()); // 准备在线视频
+        String video_url = mVideoInfo.getVideo();
+        if (!video_url.toLowerCase().startsWith("http")) {
+            video_url = UrlConstant.HTTP_PREFIX + video_url;
+        }
+        prepareVideo(video_url); // 准备在线视频
         return mView; // 返回该碎片的视图对象
     }
 
