@@ -40,7 +40,7 @@ public class WisdomEyeActivity extends AppCompatActivity implements
             startActivity(intent);
         });
         // 从App实例中获取唯一的人员持久化对象
-        personDao = com.example.chapter19.MainApplication.getInstance().getPersonDB().personDao();
+        personDao = MainApplication.getInstance().getPersonDB().personDao();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class WisdomEyeActivity extends AppCompatActivity implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         PersonInfo person = mPersonList.get(position);
-        Intent intent = new Intent(this, com.example.chapter19.PersonDetailActivity.class);
+        Intent intent = new Intent(this, PersonDetailActivity.class);
         intent.putExtra("person_name", person.getName());
         startActivity(intent);
     }

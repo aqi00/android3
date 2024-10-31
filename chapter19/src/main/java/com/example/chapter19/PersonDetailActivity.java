@@ -95,7 +95,7 @@ public class PersonDetailActivity extends AppCompatActivity {
     // 初始化数据
     private void initData() {
         // 从App实例中获取唯一的人员持久化对象
-        personDao = com.example.chapter19.MainApplication.getInstance().getPersonDB().personDao();
+        personDao = MainApplication.getInstance().getPersonDB().personDao();
         mPerson = personDao.queryPersonByName(mPersonName);
         tv_name.setText("人员姓名："+mPersonName);
         tv_info.setText("人员简介："+mPerson.getInfo());
@@ -123,7 +123,7 @@ public class PersonDetailActivity extends AppCompatActivity {
 
     // 跳到人员识别界面
     private void gotoVerify() {
-        Intent intent = new Intent(this, com.example.chapter19.PersonVerifyActivity.class);
+        Intent intent = new Intent(this, PersonVerifyActivity.class);
         intent.putExtra("person_name", mPersonName);
         startActivityForResult(intent, VERIFY_CODE);
     }

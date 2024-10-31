@@ -57,7 +57,7 @@ public class PersonEditActivity extends AppCompatActivity {
     // 初始化数据
     private void initData() {
         // 从App实例中获取唯一的人员持久化对象
-        personDao = com.example.chapter19.MainApplication.getInstance().getPersonDB().personDao();
+        personDao = MainApplication.getInstance().getPersonDB().personDao();
         portraitList.add(new PersonPortrait("", "", -1)); // -1表示一个加号图片
         mAdapter = new PortraitRecyclerAdapter(this, portraitList);
         rv_sample.setAdapter(mAdapter);
@@ -79,7 +79,7 @@ public class PersonEditActivity extends AppCompatActivity {
                 // 根据指定图片的uri，获得自动缩小后的图片路径
                 String image_path = BitmapUtil.getAutoZoomPath(this, uri);
                 // 下面跳到头像裁剪页面
-                Intent cutIntent = new Intent(this, com.example.chapter19.PersonCutActivity.class);
+                Intent cutIntent = new Intent(this, PersonCutActivity.class);
                 cutIntent.putExtra("image_path", image_path);
                 startActivityForResult(cutIntent, CUT_CODE);
             } else if (requestCode == CUT_CODE) { // 从头像裁剪页面返回
