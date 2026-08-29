@@ -35,6 +35,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    // 引入来自 https://github.com/happydog-intj/JsBridge 的 JsBridge 1.0.4 版本
+    implementation project(':jsbridge')
     // WorkManager库各版本见 https://mvnrepository.com/artifact/androidx.work/work-runtime
     implementation 'androidx.work:work-runtime:2.7.1'
     // gson库各版本见 https://mvnrepository.com/artifact/com.google.code.gson/gson

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_okhttp_call).setOnClickListener(this);
         findViewById(R.id.btn_okhttp_download).setOnClickListener(this);
         findViewById(R.id.btn_okhttp_upload).setOnClickListener(this);
+        findViewById(R.id.btn_web_bridge).setOnClickListener(this);
         findViewById(R.id.btn_glide_simple).setOnClickListener(this);
         findViewById(R.id.btn_glide_cache).setOnClickListener(this);
         findViewById(R.id.btn_glide_special).setOnClickListener(this);
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, OkhttpDownloadActivity.class));
         } else if (v.getId() == R.id.btn_okhttp_upload) {
             startActivity(new Intent(this, OkhttpUploadActivity.class));
+        } else if (v.getId() == R.id.btn_web_bridge) {
+            startActivity(new Intent(this, WebBridgeActivity.class));
         } else if (v.getId() == R.id.btn_glide_simple) {
             startActivity(new Intent(this, GlideSimpleActivity.class));
         } else if (v.getId() == R.id.btn_glide_cache) {

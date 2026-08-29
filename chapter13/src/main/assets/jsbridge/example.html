@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi" />
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebViewJavascriptBridge Demo</title>
+</head>
+<body><br><br><br>
+<span style="font-size:18px;">测试JSBridge调用，先由H5请求APP，再由APP回调H5</span><br><br>
+    <button onclick="javascript:getNetworkInfo()"><span style="font-size:18px;">获取网络信息</span></button><br><br>
+    <div id="result"></div>
+
+<script type="text/javascript">
+    // 下面是H5请求APP的JS接口
+     function getNetworkInfo(){
+         console.log("WebViewJavascriptBridge getNetworkInfo");
+             //call native methodName
+             window.WebViewJavascriptBridge.callHandler(
+                 "JSBridge"
+                 , {methodName: "getNetworkInfo", "callbackName": "getNetworkInfo", "requestParams": {seq: "123"} }
+                 , function(responseData) {
+                     document.getElementById("msg").innerHTML = "send get responseData from java, responseParams = " + responseData
+                 }
+             );
+     }
+</script>
+<script type="text/javascript">
+    // 下面是APP回调H5的JS接口
+    function JSBridge_onCallback(callbackName, params){
+        console.log("WebViewJavascriptBridge JSBridge_onCallback callbackName="+callbackName+", isSuccess="+params['isSuccess']);
+        if (params['isSuccess'] != true) {
+            console.log("WebViewJavascriptBridge JSBridge_onCallback callbackName="+callbackName+", isSuccess="+params['isSuccess']+", errorMessage="+params['errorMessage']);
+        } else {
+            var responseParams = params['responseParams']
+            if (callbackName == "getNetworkInfo") {
+                console.log("WebViewJavascriptBridge JSBridge_onCallback networkType="+responseParams['networkType']+", networkNameEN="+responseParams['networkNameEN']+", networkNameCN="+responseParams['networkNameCN']);
+                document.getElementById("result").innerHTML = "WebViewJavascriptBridge JSBridge_onCallback networkType="+responseParams['networkType']+", networkNameEN="+responseParams['networkNameEN']+", networkNameCN="+responseParams['networkNameCN'];
+            }
+        }
+    }
+</script>
+<script>
+    // 初始化JS桥
+    function connectWebViewJavascriptBridge(callback) {
+           if (window.WebViewJavascriptBridge) {
+               callback(WebViewJavascriptBridge)
+           } else {
+               document.addEventListener(
+                   'WebViewJavascriptBridgeReady'
+                   , function() {
+                       callback(WebViewJavascriptBridge)
+                   },
+                   false
+               );
+           }
+       }
+      // 第一连接时初始化bridage
+       connectWebViewJavascriptBridge(function(bridge) {
+           bridge.init(function(message, responseCallback) {
+               console.log('JS got a message', message);
+               var responseParams = {
+                   'Javascript Responds': '测试中文!'
+               };
+               console.log('JS responding with', responseParams);
+               responseCallback(responseParams);
+           });
+           // 注册一个"JSBridge_onCallback",
+           bridge.registerHandler("JSBridge_onCallback", function(data, responseCallback) {
+               document.getElementById("result").innerHTML = ("data from Java: = " + data);
+               var responseData = "Javascript Says Right back aka!";
+               responseCallback(responseData);
+           });
+       })
+</script>
+</body>
+</html>

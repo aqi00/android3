@@ -3,6 +3,8 @@
     package="com.example.chapter13">
     <!-- 互联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 存储卡 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,12 +34,13 @@
         <activity android:name=".OkhttpCallActivity" />
         <activity android:name=".OkhttpDownloadActivity" />
         <activity android:name=".OkhttpUploadActivity" />
+        <activity android:name=".WebSocketActivity" />
         <activity android:name=".GlideSimpleActivity" />
         <activity android:name=".GlideCacheActivity" />
         <activity android:name=".GlideSpecialActivity" />
         <activity android:name=".SocketioTextActivity" />
         <activity android:name=".SocketioImageActivity" />
-        <activity android:name=".WebSocketActivity" />
+        <activity android:name=".WebBridgeActivity" />
         <activity android:name=".WeLoginActivity" />
         <activity
             android:name=".WeChatActivity"
